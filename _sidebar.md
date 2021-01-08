@@ -8,4 +8,6 @@
 
 - c++
 
+  - [读取图片到控件展示](c++/read-img-to-control.md)
+
 - other
