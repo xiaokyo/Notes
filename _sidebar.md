@@ -1,11 +1,11 @@
-- Getting started
+- javascript & typescript
 
-  - [Quick start](quickstart.md)
+  - [Quick start](javascript&typescript/)
   - [Writing more pages](more-pages.md)
   - [Custom navbar](custom-navbar.md)
   - [Cover page](cover.md)
 
-- Customization
+- c++
 
   - [Configuration](configuration.md)
   - [Themes](themes.md)
@@ -14,7 +14,7 @@
   - [Markdown configuration](markdown.md)
   - [Language highlighting](language-highlight.md)
 
-- Guide
+- other
 
   - [Deploy](deploy.md)
   - [Helpers](helpers.md)
