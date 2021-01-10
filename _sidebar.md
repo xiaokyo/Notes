@@ -10,4 +10,12 @@
 
   - [读取图片到控件展示](c++/read-img-to-control.md)
 
+- assembly
+
+  - [pushad和popad的理解](assembly/pushad&popad.md)
+
+- python
+
+  - [python启动一个简单的http服务器](python/start-http-server.md)
+
 - other
