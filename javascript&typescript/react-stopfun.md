@@ -1,6 +1,6 @@
 # React 事件阻止冒泡
 
-```
+```javascript
 e.nativeEvent.stopImmediatePropagation()
 ```
 

@@ -2,7 +2,7 @@
 
 
 以下命令会以当前目录为根目录启动一个服务器 端口为3000：
-```
+```cmd
 python -m SimpleHTTPServer 3000
 ```
 
@@ -18,7 +18,7 @@ CGIHTTPServer: 包含处理POST请求和执行CGIHTTPRequestHandler类。
 
 ### （注意） python3 的命令为：
 
-```
+```cmd
 python -m http.server –cgi 3000
 ```
 

@@ -1,6 +1,6 @@
 # 大型仓库clone失败解决
 
-```
+```cmd
 git config --global http.postBuffer 524288000
 ```
 

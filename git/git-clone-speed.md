@@ -28,11 +28,11 @@ linux: /etc/hosts
 ## 刷新dns
 
 window 运行
-```
+```cmd
 ipconfig /flushdns
 ```
 
 linux 运行
-```
+```cmd
 sudo /etc/init.d/networking restart
 ```
