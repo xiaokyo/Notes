@@ -40,20 +40,19 @@ const dirs = readDirs();
     for (let i = 0; i < dirs.length; i++) {
         // 类型标题
         const oneTitle = dirs[i].toString()
-        const files = fs.readdirSync(oneTitle, { encoding: "utf-8" })
-        console.log('dir', oneTitle)
+        const files = fs.readdirSync(path.resolve(cwd, oneTitle), { encoding: "utf-8" })
         temp += `- ${oneTitle} \r\n\r\n`;
 
         for (let j = 0; j < files.length; j++) {
             const filePath = files[j];
             // 文件名
             const url = oneTitle + '/' + filePath;
-            const title = await readFileLine(oneTitle + '/' + filePath)
+            const title = await readFileLine(path.resolve(cwd, oneTitle + '/' + filePath))
             temp += `  - [${title.replace('#', '').trim()}](${url}) \r\n`
         }
 
         temp += `\r\n`
     }
 
-    fs.writeFileSync('_sidebar.md', temp, { encoding: "utf-8" })
+    fs.writeFileSync(path.resolve(cwd, '_sidebar.md'), temp, { encoding: "utf-8" })
 })()
