@@ -1,8 +1,6 @@
 const fs = require("fs")
-const { resolve } = require("path")
 const path = require('path')
 const readLine = require('readline')
-const { callbackify } = require("util")
 
 /** 运行目录 */
 const cwd = process.cwd()
