@@ -6,6 +6,6 @@
   "author": "zhengwenjian <904656778@qq.com>",
   "license": "MIT",
   "scripts": {
-    "gen:bar":"node ./genBar.js"
+    "vercel-build":"node ./genBar.js"
   }
 }
