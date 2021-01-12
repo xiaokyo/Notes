@@ -66,6 +66,7 @@
 
   - [首页](README.md) 
 ```
+或者你可以参考[自动生成_sidebar.md文档](/javascript&typescript/node-gen-doc-sidebar.md)自动生成_sidebar
 
 ### 新建```README.md```用来当首页面
 ```md
