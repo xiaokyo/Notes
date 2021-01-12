@@ -1,5 +1,7 @@
 - javascript & typescript
 
+  - [阻止React事件冒泡](javascript&typescript/react-stopfun.md)
+
 - git
 
   - [大型仓库clone失败解决](git/clone-big-rep-fail.md)
