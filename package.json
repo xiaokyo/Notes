@@ -1,0 +1,11 @@
+{
+  "name": "doc-by-anythings",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/xiaokyo/doc-by-anything.git",
+  "author": "zhengwenjian <904656778@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "gen:bar":"node ./genBar.js"
+  }
+}
