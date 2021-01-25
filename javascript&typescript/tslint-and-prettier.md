@@ -80,3 +80,10 @@ package.json
     }
 },
 ```
+
+### 还可以配合 vscode 的插件[prettier-code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)保存自动格式化
+
+```json
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.formatOnSave": true
+```
