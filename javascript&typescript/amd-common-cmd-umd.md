@@ -42,7 +42,6 @@ define(id?, dependencies?, factory);
 如何使用
 ```javascript
 // math.js
-// math.js
 define(function() {
   var add = function(x, y) {
     return x + y;
