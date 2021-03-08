@@ -14,7 +14,7 @@ curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/con
 curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
 ```
 
-### 在`~/.zshrc`中添加一下代码
+### 在`~/.zshrc`中添加以下代码
 
 ```
 # Load Git completion
