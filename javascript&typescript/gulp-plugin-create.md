@@ -11,7 +11,7 @@ console.log(buf1)// <Buffer 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e>
 // 字符串转Buffer
 const buf2 = Buffer.from('javascript')
 console.log(buf2)// <Buffer 6a 61 76 61 73 63 72 69 70 74>
-// 字符串转 buffer
+// buffer转字符串
 console.log(buf2.toString())// javascript
 console.log(buf2.toString('hex')) //6a617661736372697074
 ```
@@ -30,7 +30,7 @@ const gutil = require('gulp-util');
 const PluginError = gutil.PluginError;
 
 // 插件名称
-const PLUGIN_NAME = 'gulp-version-script-css';
+const PLUGIN_NAME = 'gulp-plugin-test';
 
 function myPlugin(){
   // 创建一个 stream 通道，以让每个文件通过
