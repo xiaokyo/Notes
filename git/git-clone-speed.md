@@ -17,7 +17,7 @@ hosts所在目录:
 
 window: C:\Windows\System32\drivers\etc\hosts
 
-linux: /etc/hosts
+linux/mac: /etc/hosts
 
 将查询到的ip代码添加至hosts底部：
 ```
@@ -32,7 +32,7 @@ window 运行
 ipconfig /flushdns
 ```
 
-linux 运行
+linux/mac 运行
 ```cmd
 sudo /etc/init.d/networking restart
 ```
