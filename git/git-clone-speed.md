@@ -32,7 +32,12 @@ window 运行
 ipconfig /flushdns
 ```
 
-linux/mac 运行
+linux 运行
 ```cmd
 sudo /etc/init.d/networking restart
+```
+
+mac 运行
+```cmd
+sudo killall -HUP mDNSResponder
 ```
