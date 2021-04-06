@@ -1,4 +1,4 @@
-# vercel 部署一个项目
+# vercel 部署一个博客项目
 
 ### 为什么要用[vercel](https://vercel.com)
 
