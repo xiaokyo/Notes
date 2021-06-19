@@ -37,7 +37,7 @@ sudo openssl x509 -req -in server.csr -out server.crt -signkey server.key -days 
 
 ```
 server{
-  listen      433 ssl;
+  listen      443 ssl;
   server_name  localhost;
 
   ssl_certificate      /usr/local/nginx/server.crt;
