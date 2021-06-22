@@ -41,6 +41,27 @@ source ~/.zshrc
 | gf | git fetch |
 | gfa | git fetch --all --prune |
 
+### 安装zsh-suggestions
+
+此工具是帮助开发者在输入命令时候出现联想词等信息供参考
+
+![image-20210622185350054](https://ipic.xiaokyo.com/2021-06-22-105350.png)
+
+如何安装 —— 前提已经安装好ohmyzsh
+
+```bash
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+```
+
+编辑.zshrc文件
+
+```
+vim ~/.zshrc
+
+#找到plugins=(git)这一行，然后再添加autosuggestions
+plugins=(git zsh-autosuggestions)
+```
+
 ### vim一些操作记录
 
 查询字符串
