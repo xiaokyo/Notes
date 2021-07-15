@@ -29,6 +29,13 @@ dataStr = dataStr.replace(/{name=(.*?), value=(.*?)}/, (_, name, value) => {
 (?<=A)[\s\S]*(?=B)
 ```
 
+```javascript
+const prefix = '<title>'
+const suffix = '</title>'
+const reg = new RegExp(`(?<=${prefix})([\\s\\S]*)(?=${suffix})`, 'gm')
+const title = temp.match(reg)
+```
+
 比如:
 
 ```
