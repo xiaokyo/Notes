@@ -1,6 +1,6 @@
 # 了解Module Federation
 
-### 什么事module federation
+### 什么是module federation
 
 在```webpack5```中新增的```module federation```功能, 是可以将模块动态引入的一种功能
 
@@ -42,7 +42,7 @@ new ModuleFederationPlugin({
     app1: "app1@http://localhost:3001/remoteEntry.js", 
     // 可以引入多个模块
   },
-  // 可以将依赖不打包到模块引入
+  // 共享依赖打包
   shared: {
     react: { singleton: true },
     "react-dom": { singleton: true }
@@ -105,3 +105,12 @@ new Vue({
 })
 ```
 
+### angular1.x需要依赖ocLazyload
+
+利用ocLazyload加载异步模块
+
+模块中就可以直接同步引入远程模块
+
+```javascript
+import Card from '@remote/Card'
+```
