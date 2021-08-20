@@ -52,3 +52,19 @@ tail -f 文件名 | perl -pe 's/(关键词1)|(关键词2)|(关键词3)/\e[1;颜�
 47;白色背景
 ```
 
+### scp操作
+
+```bash
+//上传本地文件到服务器
+scp local_file_path root@host:/home/www/
+
+//上传本地文件夹到服务器
+scp -r local_dir root@host:/home/www/
+
+//下载服务器文件到本地
+scp root@host:/home/www/filename local_path
+
+//下载服务器文件夹到本地
+scp -r root@host:/home/www/ local_path
+```
+

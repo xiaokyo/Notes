@@ -104,6 +104,12 @@ lerna publish patch --yes
 
 patch代表自增 1.0.0 => 1.0.1
 
+```bash
+lerna add --scope=@cckj/mf-webpack-base @cckj/mf-types -D
+```
+
+将内部依赖加入指定包拓扑排序就可以有序列的运行
+
 ### package中的maintainers字段
 
 ```json
@@ -113,6 +119,77 @@ patch代表自增 1.0.0 => 1.0.1
 ```
 
 维护者(maintainers)字段不配置的时候会导致无法publish
+
+### 可能你还需要changelog
+
+可以规范提交来达到changelog的自动生成
+
+```bash
+yarn add -W -D commitizen cz-lerna-changelog @commitlint/cli @commitlint/config-conventional husky
+```
+
+```package.json```添加如下代码
+
+```
+"config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
+  "scripts": {
+  	"commit-msg":"commitlint -e -V"
+  }
+```
+
+添加```commitlint.config.js```
+
+```javascript
+const fs = require('fs')
+
+/**
+ * 获取packages下的包名当作scopes
+ * @returns scopes
+ */
+function getScopeEnum() {
+  const dirs = fs.readdirSync('./packages') || []
+  dirs.unshift('root')
+  return dirs
+}
+
+module.exports = {
+  extents: ['@commitlint/config-conventional'],
+  rules: {
+    'type-enum': [
+      2,
+      'always',
+      [
+        'build',
+        'chore',
+        'ci',
+        'docs',
+        'feat',
+        'fix',
+        'improvement',
+        'perf',
+        'refactor',
+        'revert',
+        'style',
+        'test',
+      ],
+    ],
+    'scope-enum': [2, 'always', getScopeEnum()],
+    'scope-empty': [2, 'never'],
+  },
+}
+```
+
+husky添加一个命令
+
+```
+npx husky add .husky/commit-msg "yarn commit-msg"
+```
+
+上面代码添加了一个commit时的hook规范提交检查
 
 ### 注意
 
