@@ -1,6 +1,7 @@
 const fs = require("fs")
 const path = require('path')
 const readLine = require('readline')
+const http = require('http')
 
 /** 运行目录 */
 const cwd = process.cwd()
@@ -53,4 +54,6 @@ const dirs = readDirs();
     }
 
     fs.writeFileSync(path.resolve(cwd, '_sidebar.md'), temp, { encoding: "utf-8" })
+
+    http.get('http://180.76.185.91/enterprise/sendText?secret=38abc24f-5446-4f78-879f-f5a8f000e102&content=blog%20devlop%20success')
 })()
