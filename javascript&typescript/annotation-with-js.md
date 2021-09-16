@@ -2,16 +2,39 @@
 
 基本类型必须首字母小写, 包括 ```{string}``` ```{number}``` ```{boolean}```
 
+注释前必须空一行
+
 ### 单行注释
 
-```
+```javascript
 // 这是注释
 ```
 
 ### 多行样式
 
-```
+```javascript
 /*...*/
+```
+
+### 常量注释
+
+```javascript
+/**
+ * 常量说明
+ *
+ * @const
+ * @type {string}
+ */
+var REQUEST_URL = "myurl.io"
+```
+
+### 文件开头常用注释
+
+```javascript
+/**
+ * @author xiaokyo
+ * @description 这是一个文件
+ */
 ```
 
 ### 普通函数
@@ -27,6 +50,40 @@
  * @return {Object} 返回值描述
  */
 function foo(p1, p2, p3) {}
+```
+
+### 复杂类型注释
+
+```javascript
+// `namespaceA~` 可以换成其它 namepaths 前缀，目的是为了生成文档中能显示 `@typedef` 定义的类型和链接。
+/**
+ * 服务器
+ *
+ * @typedef {Object} namespaceA~Server
+ * @property {string} host 主机
+ * @property {number} port 端口
+ */
+
+/**
+ * 服务器列表
+ *
+ * @type {Array.<namespaceA~Server>}
+ */
+var servers = [
+	{
+		host: '1.2.3.4',
+		port: 8080
+	}
+]
+```
+
+### 标记型注释
+
+```javascript
+// TODO 有功能待实现, 简单说明下实现的功能
+// FIXME 代码运行没问题, 但可能由于时间赶或者其他原因, 需要修正. 此时需要对如何修正进行简单说明
+// HACK 使用了奇奇怪怪的实现的方法编写出的代码, 此时需要对思路或奇奇怪怪的方法进行描述
+// XXX 这里的代码可能存在风险问题, 对风险进行描述下
 ```
 
 ### 参数为对象的函数
