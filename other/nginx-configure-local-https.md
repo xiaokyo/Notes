@@ -53,3 +53,15 @@ server{
 > 如果nginx是用域名访问, hosts文件也要配置一致域名
 
 ![image-20210526140901215](https://ipic.xiaokyo.com/2021-05-31-081532.png)
+
+### chrome需要注意的点
+
+google无法处理的杂乱凭证
+
+![image-20211130194237149](https://ipic.xiaokyo.com/2021-11-30-114237.png)
+
+出现这种情况, 按以下步骤
+
+1. 鼠标点击空白处
+2. 键盘直接输入**thisisunsafe**即可自动刷新即可访问了
+
