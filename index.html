@@ -54,5 +54,21 @@
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
+
+    <!-- service worker -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js", { scope: "/" })
+            .then(() => {
+              console.log("Service Worker registration successful");
+            })
+            .catch((err) => {
+              console.log("Service worker registration failed");
+            });
+        });
+      }
+    </script>
   </body>
 </html>
