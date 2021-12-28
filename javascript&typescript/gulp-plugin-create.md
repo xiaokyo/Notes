@@ -26,6 +26,7 @@ yarn add gulp gulp-util through2 -D
 
 ```javascript
 const gulp = require('gulp')
+const through = require('through2)
 const gutil = require('gulp-util');
 const PluginError = gutil.PluginError;
 
