@@ -63,6 +63,29 @@ function flat(list) {
 
 const result = flat(skusResult) // 这个数据就是 [ ['','',''], ['Red', '', ''], ['Red', 'iphoneXR', ''] ]
 ```
+### 渲染时可选
+```javascript
+ /**
+   * 是否能点击
+   */
+  const canClick = useCallback(
+    (renderValue: string, index: number) => {
+      let selectedSkuProperty = [...vKeys]
+      selectedSkuProperty[index] = renderValue
+      selectedSkuProperty = addPrefix(selectedSkuProperty)
+      // 加个前后缀
+      function addPrefix(list) {
+        return list.map((_, i) => i + _ + i)
+      }
+      const variantKeyText = selectedSkuProperty.join('-')
+      return specCombinationList.some(_ => {
+        return addPrefix(_).join('-').indexOf(variantKeyText) > -1
+      })
+    },
+    [specCombinationList, vKeys]
+  )
+```
+
 
 ### 原文链接
 
