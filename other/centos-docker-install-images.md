@@ -51,6 +51,9 @@ docker exec -it [contianerId|contianerName] bash // 使用bash进入容器内部
 docker start [contianerId|contianerName] // 启动容器
 
 docker-compose up -d // 组合Dockerfile镜像管理
+docker-compose down --rmi all -v // 删除镜像及关闭容器及删除卷
+docker-compose up -d --force-receate // 重新创建容器
+docker-compose up -d --build
 ```
 
 
