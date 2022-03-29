@@ -66,6 +66,12 @@ lerna-repo/
 
 ### 常用命令
 
+```
+lerna publish prerelease --preid beta --pre-dist-tag next --no-git-tag-version --no-push
+```
+
+发布一个根据当前最新包发出的beta包, 可以将beta改为其他字符, 如```1.1.0 >> 1.1.1-beta.0```
+
 ```bash
 yarn workspace <package name> add react
 ```
