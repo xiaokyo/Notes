@@ -14,6 +14,7 @@
       content="javascript, node, electron, css, react, typescript, blog, xiaokyo, xiaok"
     />
     <meta name="description" content="There is xiaok's blog" />
+    <link rel="shortcut icon" href="/512x512.png" type="image/x-icon">
   </head>
 
   <body>
@@ -55,20 +56,5 @@
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
 
-    <!-- service worker -->
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/sw.js", { scope: "/" })
-            .then(() => {
-              console.log("Service Worker registration successful");
-            })
-            .catch((err) => {
-              console.log("Service worker registration failed");
-            });
-        });
-      }
-    </script>
   </body>
 </html>
