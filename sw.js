@@ -5,7 +5,7 @@ this.addEventListener("install", (event) => {
   event.waitUntil(
     // 安装成功后调用CacheStorage缓存，使用之前先通过caches.open()
     // 打开对应的缓存空间
-    caches.open("my-test-cache-v1").then((cache) => {
+    caches.open("v1").then((cache) => {
       // 通过cache缓存对象的addAll方法添加
       return cache.addAll([
         "/",
@@ -14,5 +14,15 @@ this.addEventListener("install", (event) => {
         "//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js",
       ]);
     })
+  );
+});
+
+/* 注册fetch事件，拦截全站的请求 */
+this.addEventListener('fetch', function (event) {
+  event.respondWith(
+    // magic goes here
+
+    /* 在缓存中匹配对应请求资源直接返回 */
+    caches.match(event.request)
   );
 });
