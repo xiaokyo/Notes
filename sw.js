@@ -17,12 +17,12 @@ this.addEventListener("install", (event) => {
   );
 });
 
-/* 注册fetch事件，拦截全站的请求 */
-this.addEventListener('fetch', function (event) {
-  event.respondWith(
-    // magic goes here
+// /* 注册fetch事件，拦截全站的请求 */
+// this.addEventListener('fetch', function (event) {
+//   event.respondWith(
+//     // magic goes here
 
-    /* 在缓存中匹配对应请求资源直接返回 */
-    caches.match(event.request)
-  );
-});
+//     /* 在缓存中匹配对应请求资源直接返回 */
+//     caches.match(event.request)
+//   );
+// });
