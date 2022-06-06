@@ -47,7 +47,7 @@ const dirs = readDirs();
             // 文件名
             const url = oneTitle + '/' + filePath;
             const title = await readFileLine(path.resolve(cwd, oneTitle + '/' + filePath))
-            temp += `  - [${title.replace('#', '').trim()}](${url}) \r\n`
+            temp += `  - [${title.replace(/#/g, '').trim()}](${url}) \r\n`
         }
 
         temp += `\r\n`
