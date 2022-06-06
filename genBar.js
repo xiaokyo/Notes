@@ -39,6 +39,8 @@ const dirs = readDirs();
     for (let i = 0; i < dirs.length; i++) {
         // 类型标题
         const oneTitle = dirs[i].toString()
+        console.log('%cgenBar.js line:42 oneTitle', 'color: #007acc;', oneTitle);
+        if (oneTitle.indexOf('public') > -1) continue // 说明是静态文件目录
         const files = fs.readdirSync(path.resolve(cwd, oneTitle), { encoding: "utf-8" })
         temp += `- ${oneTitle} \r\n\r\n`;
 
