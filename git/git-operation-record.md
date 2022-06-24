@@ -14,3 +14,9 @@ git log mycj/public/reset.css
 git checkout <hash> mycj/public/reset.css
 ```
 
+3. 删除已合并至master的分支
+
+```bash
+git branch --merged master | grep -v '^[ *]*master$' | xargs git branch -d
+```
+
