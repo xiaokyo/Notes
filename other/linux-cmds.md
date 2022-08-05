@@ -68,3 +68,9 @@ scp root@host:/home/www/filename local_path
 scp -r root@host:/home/www/ local_path
 ```
 
+### 查看pid进程信息
+
+```
+ps aux | grep <pid>
+```
+

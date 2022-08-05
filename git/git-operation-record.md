@@ -20,3 +20,11 @@ git checkout <hash> mycj/public/reset.css
 git branch --merged master | grep -v '^[ *]*master$' | xargs git branch -d
 ```
 
+4. 分支描述操作
+
+```
+git config branch.[branchName].description // 查看分支备注
+git config branch.[branchName].description [msg] // 设置msg到branchName备注
+```
+
+有个工具git-br

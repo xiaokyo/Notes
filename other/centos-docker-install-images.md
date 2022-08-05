@@ -47,7 +47,7 @@ docker images // 查看镜像列表
 docker ps // 查看容器列表
 docker rmi [imageId] // 镜像删除
 docker rm [contianerId] // 容器删除
-docker exec -it [contianerId|contianerName] bash // 使用bash进入容器内部
+docker exec -it [contianerId|contianerName] (bash|sh) // 使用bash进入容器内部
 docker start [contianerId|contianerName] // 启动容器
 
 docker-compose up -d // 组合Dockerfile镜像管理
