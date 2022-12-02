@@ -2,8 +2,21 @@
 
 ### 安装docker
 
+建议按照这个来[https://jhooq.com/docker-daemon-centos/](https://jhooq.com/docker-daemon-centos/)
+
+这个也行https://juejin.cn/post/6844903965381885966
+
 ```
 yum install docker
+```
+
+### 安装docker-compose
+
+```bash
+curl -L https://get.daocloud.io/docker/compose/releases/download/v2.13.0/docker-compose-`uname -s`-`uname -m`  > /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+docker-compose --version
 ```
 
 ### 安装redis镜像
@@ -36,6 +49,22 @@ docker pull nginx
 /var/log/nginx
 ```
 
+### 安装mysql
+
+```
+docker pull mysql // 下载镜像
+docker run -d -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456 nmysql // 启动先, cp下配置文件
+docker exec -it mysql bash // 进入容器内bash
+mysql -uroot -p123456 // 容器内操作, 链接数据库
+show variables like '%datadir%'; // mysql中查看数据存放目录
+
+docker cp mysql:/etc/mysql/conf.d /Users/xiaokyo/mysql/conf // 容器拷贝到用户磁盘
+docker stop mysql
+docker rm mysql
+
+docker run -d -p 3306:3306 --name mysql -v /Users/xiaokyo/mysql/conf:/etc/mysql -v /Users/xiaokyo/mysql/data:/var/lib/mysql/ -e MYSQL_ROOT_PASSWORD=123456 --restart always mysql // 重新启动mysql容器
+```
+
 ### docker配置常用命令
 
 ![image-20220324133757581](https://ipic.xiaokyo.com/2022-03-24-3757OotykC.png)
@@ -52,8 +81,9 @@ docker start [contianerId|contianerName] // 启动容器
 
 docker-compose up -d // 组合Dockerfile镜像管理
 docker-compose down --rmi all -v // 删除镜像及关闭容器及删除卷
-docker-compose up -d --force-receate // 重新创建容器
+docker-compose up -d --force-recreate // 重新创建容器
 docker-compose up -d --build
+docker-compose logs mysql // 查看日志
 ```
 
 
