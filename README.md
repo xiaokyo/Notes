@@ -4,7 +4,7 @@
 
 ### 个人简介
 
-- 本人是[wangEditor](https://www.wangeditor.com/doc#%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98)的开发人员之一
+- 本人是[wangEditor](https://www.wangeditor.com/v4/)的开发人员之一
 
 - 5年前端开发经验
 - 熟练使用react/angular/vue
