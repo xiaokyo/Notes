@@ -57,5 +57,5 @@ const dirs = readDirs();
 
     fs.writeFileSync(path.resolve(cwd, '_sidebar.md'), temp, { encoding: "utf-8" })
 
-    // http.get('http://180.76.185.91/enterprise/sendText?secret=3016cdc5-c509-47d0-880f-3cb044fd7bfa&content=blog%20devlop%20success')
+    http.get('https://notice.xiaokyo.com/enterprise/sendText?secret=1d269784-1f24-4e0c-8396-c5a1a90da001&content=' + encodeURIComponent('文档更新成功了~'))
 })()
