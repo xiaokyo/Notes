@@ -1,7 +1,7 @@
 const fs = require("fs")
 const path = require('path')
 const readLine = require('readline')
-const http = require('http')
+const https = require('https')
 
 /** 运行目录 */
 const cwd = process.cwd()
@@ -57,5 +57,13 @@ const dirs = readDirs();
 
     fs.writeFileSync(path.resolve(cwd, '_sidebar.md'), temp, { encoding: "utf-8" })
 
-    http.get('https://notice.xiaokyo.com/enterprise/sendText?secret=1d269784-1f24-4e0c-8396-c5a1a90da001&content=' + encodeURIComponent('文档更新成功了~'))
+    const options = {
+        hostname: 'notice.xiaokyo.com',
+        port: 443,
+        path: `/enterprise/sendText?secret=1d269784-1f24-4e0c-8396-c5a1a90da001&content=${encodeURIComponent('文档更新成功了~')}`,
+        method: 'GET'
+    };
+
+    const req = https.request(options)
+    req.end();
 })()
