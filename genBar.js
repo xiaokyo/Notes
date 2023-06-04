@@ -57,8 +57,10 @@ const dirs = readDirs();
 
     fs.writeFileSync(path.resolve(cwd, '_sidebar.md'), temp, { encoding: "utf-8" })
 
-    // node 获取最新一条git commit记录的message
-    const commitMessage = fs.readFileSync(path.resolve(cwd, '.git/COMMIT_EDITMSG'), { encoding: "utf-8" })
+    // node 获取最新一条git commit记录的message, 用child_process来实现
+    const { execSync } = require('child_process')
+    const commitMessage = execSync('git log -1 --pretty=format:"%s"').toString()
+
     console.log(commitMessage)
     const options = {
         hostname: 'notice.xiaokyo.com',
