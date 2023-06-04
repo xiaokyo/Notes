@@ -57,10 +57,13 @@ const dirs = readDirs();
 
     fs.writeFileSync(path.resolve(cwd, '_sidebar.md'), temp, { encoding: "utf-8" })
 
+    // node 获取最新一条git commit记录的message
+    const commitMessage = fs.readFileSync(path.resolve(cwd, '.git/COMMIT_EDITMSG'), { encoding: "utf-8" })
+    console.log(commitMessage)
     const options = {
         hostname: 'notice.xiaokyo.com',
         port: 443,
-        path: `/enterprise/sendText?secret=1d269784-1f24-4e0c-8396-c5a1a90da001&content=${encodeURIComponent('文档更新成功了~')}`,
+        path: `/enterprise/sendText?secret=1d269784-1f24-4e0c-8396-c5a1a90da001&content=${encodeURIComponent('文档更新成功了~, \r\nlast update commit message: \r\n' + commitMessage)}`,
         method: 'GET'
     };
 
