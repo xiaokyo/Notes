@@ -18,4 +18,23 @@ link_directories(/Users/xiaokyo/Documents/works/cpp-works/vcpkg/installed/arm64-
 ```
 
 
+### 配置静态链接库 (例子: curl)
+
+```
+# curl
+find_package(CURL REQUIRED)
+
+if(CURL_FOUND)
+  include_directories(${CURL_INCLUDE_DIR})
+  message(STATUS "Curl Found: ${CURL_VERSION_STRING} ${CURL_LIBRARIES} ${CURL_LINK_LIBRARIES}!")
+else(CURL_FOUND)
+  message(FATAL_ERROR "Could not find the CURL library and development files.")
+endif()
+
+add_executable(today-sale-price-update main.cpp ${DIR_SRCS})
+
+# 必须放在add_executable之后 today-sale-price-update 保持一致
+target_link_libraries(today-sale-price-update ${CURL_LIBRARIES})
+
+```
 
