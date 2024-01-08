@@ -13,10 +13,28 @@ yum install docker
 ### 安装docker-compose
 
 ```bash
-curl -L https://get.daocloud.io/docker/compose/releases/download/v2.13.0/docker-compose-`uname -s`-`uname -m`  > /usr/local/bin/docker-compose
+sudo curl -L "https://get.daocloud.io/docker/compose/releases/download/v2.13.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose --version
+```
+
+使用pip安装
+
+```
+sudo pip install -U docker-compose
+```
+
+### 卸载docker-compose
+
+```
+sudo rm /usr/local/bin/docker-compose
+```
+
+pip卸载
+
+```
+sudo pip uninstall docker-compose
 ```
 
 ### 安装redis镜像
@@ -79,6 +97,8 @@ docker rm [contianerId] // 容器删除
 docker exec -it [contianerId|contianerName] (bash|sh) // 使用bash进入容器内部
 docker start [contianerId|contianerName] // 启动容器
 
+docker image rm $(docker image ls -a -q) // 删除所有镜像
+
 docker-compose up -d // 组合Dockerfile镜像管理
 docker-compose down --rmi all -v // 删除镜像及关闭容器及删除卷
 docker-compose up -d --force-recreate // 重新创建容器
@@ -115,7 +135,12 @@ docker cp [contianerId|contianerName]:/etc/nginx/nginx.conf ./
 - /etc/nginx/nginx.conf 容器内的文件
 - ./ 当前主机的目录
 
+#### 镜像源
 
+```
+https://registry.docker-cn.com // 源地址
+http://f1361db2.m.daocloud.io // daocloud
+```
 
 ### 网络相关
 
