@@ -67,7 +67,7 @@ fn hello(name: &str) -> String {
 use rocket::fs::FileServer;
 ...
 fn rocket() -> _ {
-  // 绝对路径， 估计可以相对， 但是我不知道
+  // 绝对路径
   rocket::build().mount("/public", FileServer::from("E:/works/rs_xiaokun_rocket/public"))
 }
 
