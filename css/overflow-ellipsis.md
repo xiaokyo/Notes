@@ -24,3 +24,22 @@ line-clamp: 2;
  column-gap: 10px;
 ```
 
+## react antd tooltip ellipsis
+
+```react
+<Tooltip overlay={value}>
+          <span
+            style={{
+              maxWidth: 300,
+              display: 'inline-block',
+              whiteSpace: 'nowrap',
+              textOverflow: 'ellipsis',
+              overflow: 'hidden',
+              wordBreak: 'break-all',
+            }}
+          >
+            {value}
+          </span>
+        </Tooltip>
+```
+

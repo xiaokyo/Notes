@@ -159,6 +159,16 @@ https://registry.docker-cn.com // 源地址
 http://f1361db2.m.daocloud.io // daocloud
 ```
 
+### 国内镜像源
+
+aliyun的镜像
+
+```json
+{
+  "registry-mirrors": ["https://druc1m0x.mirror.aliyuncs.com"]
+}
+```
+
 ### 网络相关
 
 ```
