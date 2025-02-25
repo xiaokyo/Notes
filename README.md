@@ -6,7 +6,7 @@
 
 - 本人是[wangEditor](https://www.wangeditor.com/v4/)的开发人员之一
 
-- 5年前端开发经验
+- 8年前端开发经验
 - 熟练使用react/angular/vue
 - 熟练Redux/dva
 - rust系统编程语言入门
