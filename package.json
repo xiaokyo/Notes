@@ -6,6 +6,13 @@
   "author": "zhengwenjian <904656778@qq.com>",
   "license": "MIT",
   "scripts": {
-    "vercel-build":"node ./genBar.js"
+    "vercel-build": "node ./genBar.js && node scripts/syncToNotion.js",
+    "sync": "node scripts/syncToNotion.js"
+  },
+  "dependencies": {
+    "@notionhq/client": "^1.0.0",
+    "@tryfabric/martian": "^1.2.4",
+    "dotenv": "^16.0.0",
+    "gray-matter": "^4.0.3"
   }
 }

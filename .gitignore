@@ -2,3 +2,9 @@ _sidebar.md
 
 .DS_store
 .DS_Store
+
+node_modules
+.env
+
+yarn.lock
+package-lock.json
