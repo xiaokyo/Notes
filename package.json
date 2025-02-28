@@ -6,7 +6,7 @@
   "author": "zhengwenjian <904656778@qq.com>",
   "license": "MIT",
   "scripts": {
-    "vercel-build": "node ./genBar.js && node scripts/syncToNotion.js",
+    "vercel-build": "node ./genBar.js",
     "sync": "node scripts/syncToNotion.js"
   },
   "dependencies": {
