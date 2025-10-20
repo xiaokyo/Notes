@@ -7,6 +7,28 @@ Docker version 24.0.2, build cb74dfc
 Docker Compose version v2.19.1
 ```
 
+### 国内镜像源
+
+##### 编辑文件
+
+vim /etc/docker/daemon.json
+
+##### 文件内容
+
+```json
+{
+  "registry-mirrors": [
+    "https://docker.m.daocloud.io",
+    "https://docker-0.unsee.tech",
+    "https://docker.1panel.live"
+  ]
+}
+```
+
+##### 重启一下docker
+
+sudo systemctl daemon-reload && sudo systemctl restart docker
+
 ### 安装docker
 
 建议按照这个来[https://jhooq.com/docker-daemon-centos/](https://jhooq.com/docker-daemon-centos/)
